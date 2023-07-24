@@ -17,7 +17,6 @@ func main() {
 		Topic: "shop",
 	}
 	conn := utils.KafkaConn(cfg)
-	defer conn.Close()
 
 	if !utils.IsTopicAlreadyExists(conn, cfg.Topic) {
 		topicConfigs := []kafka.TopicConfig{
